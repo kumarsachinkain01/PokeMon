@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@600&family=Roboto&display=swap');
+
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+select, input[type="text"], button {
+    margin: 10px;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+}
+select {
+    background-color: #fff;
+    color: #333;
+}
+input[type="text"] {
+    background-color: #fff;
+    color: #333;
+    width: 200px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+button:hover {
+    background-color: #152716;
+}
+
+
+#pokemon-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(10px 10px 5px rgb(14, 13, 13));
+}
+
+.card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    width: 200px;
+    perspective: 1000px;
+    animation: moveRightToLeft 1s ease-in-out infinite alternate; /* Animation for card movement */
+}
+
+@keyframes moveRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-10px); /* Change the distance to move */
+    }
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate image 360 degrees */
+    }
+}
+
+.card:hover img{
+    transform: rotateY(180deg); /* Flip the card on hover */
+    /*size: 50px;*/
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+
+.card img {
+    width: 100px;
+}
+.card img {
+    width: 100px;
+    transition: width 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover img {
+    width: 120px; /* Increase width on hover */
+}
+
+.card .name {
+    font-weight: bold;
+}
+
+.card .type {
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+
+
+@media only screen and (max-width: 300px) {
+    header {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .container {
+        flex-direction: column;
+    }
+    
+    input[type="text"] {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    select, input[type="text"], button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .card {
+        width: 150px;
+    }
+    
+    .card img {
+        width: 80px;
+    }
+}
